@@ -7,13 +7,13 @@
     if (ogDescriptionElem != null)
         var description = ogDescriptionElem.getAttribute("content").trim();
 
-    var descriptionElem = document.querySelector('meta[property~="description"]');
+    var descriptionElem = getMeta('description')
     if (descriptionElem != null && description == null)
-        var description = descriptionElem.getAttribute("content").trim();
+        var description = descriptionElem.trim();
 
-    var keywordsElem = document.querySelector('meta[property~="keywords"]');
+    var keywordsElem = getMeta('keywords')
     if (keywordsElem != null)
-        var keywords = keywordsElem.getAttribute("content").trim();
+        var keywords = keywordsElem.trim();
 
     if (title == null)
         title = document.title.trim();
@@ -37,3 +37,16 @@
 
     return str;
 })();
+
+function getMeta(metaName) {
+    const metas = document.getElementsByTagName('meta');
+  
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+  
+    return null;
+  }
+  

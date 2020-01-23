@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "SymRe Autofill",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Automatically fills the fields for the SymRe URL shortener.",
     "homepage_url": "http://sym.re",
 
