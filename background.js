@@ -10,7 +10,7 @@ API.browserAction.onClicked.addListener((tab) => {
 function openUrl(queryStr){
 
   if (queryStr == undefined)
-    queryStr = "?url=" + encodeURIComponent("SymRe Autofill error: This address type is not supported.");
+    queryStr = "?url=" + encodeURIComponent("Error: The extension was not allowed to read the URL.");
 
   var newUrl = "http://sym.re/create" + queryStr;
   API.tabs.create({ url: newUrl });
